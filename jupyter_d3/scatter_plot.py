@@ -2,6 +2,7 @@ import uuid
 from textwrap import dedent
 from IPython.core.display import display, HTML
 from string import Template
+import numpy as np
 
 # function to initialize a scatter plot
 def init_chart(data,features):
