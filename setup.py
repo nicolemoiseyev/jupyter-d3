@@ -5,7 +5,7 @@ with open("README.md", "r") as readme_file:
 
 setup(
   name='jupyter_d3',
-  version='0.0.2',
+  version='0.0.3',
   url='https://github.com/nicolemoiseyev/jupyter-d3/',
   author='Nicole Moiseyev',
   author_email='nicole.moiseyev@duke.edu',

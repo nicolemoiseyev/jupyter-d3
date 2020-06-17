@@ -199,8 +199,6 @@ def init_chart(data,features):
           function updateLegendCat(featureColors) { // create the categorical legend
 
             var legend = d3.select("#" + legend_id).html("") // clear current legend content
-               legend.attr("width", 150)
-                .attr("height", 400); // clear current legend content
 
                 legend.append("text")
                     .attr("x", 15)
@@ -228,7 +226,7 @@ def init_chart(data,features):
 
         function updateLegendNum(domain) { // create the continuous (numerical) legend
 
-            var legend = d3.select("#" + legend_id).html("").attr("height", 700).attr("width", 500)
+            var legend = d3.select("#" + legend_id).html("")
             var width = 30,
                 height = 300;
 
@@ -239,7 +237,7 @@ def init_chart(data,features):
                     .text(colorFeature)
                     .attr("font-size", "14px")
 
-            var textHeight = 5;
+            var textHeight = 10;
 
             var linearGradient = legend.append("defs")
             .append("linearGradient")
@@ -370,7 +368,7 @@ def scatter_plot(data,x_cat,y_cat,axes,features):
       </div>
       <div style="position: relative">
         <svg id=$figure_id class='chart'></svg>
-        <div class="legend"><svg id=$legend_id height=360 width=250></svg></div>
+        <div class="legend"><svg id=$legend_id height=400 width=400></svg></div>
       </div>
       <script>
       require([$chart_id], function(mychart) {
