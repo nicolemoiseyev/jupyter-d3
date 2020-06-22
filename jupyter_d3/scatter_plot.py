@@ -237,7 +237,7 @@ def init_chart(data,features):
                     .text(colorFeature)
                     .attr("font-size", "14px")
 
-            var textHeight = 10;
+            var textHeight = 1;
 
             var linearGradient = legend.append("defs")
             .append("linearGradient")
@@ -255,7 +255,7 @@ def init_chart(data,features):
 
             const legendScale = num => {
                 var scale = d3.scaleLinear()
-                          .domain([height, 0])
+                          .domain([5, 0])
                           .range(domain)
                 return Number((scale(num))).toFixed(0)
 
@@ -271,8 +271,8 @@ def init_chart(data,features):
             for (let i = 0; i <= 5; i += 1) {
              legend.append("text")
                 .attr("x", 55)
-                .attr("y", 30 + textHeight/2 + ((height - textHeight)/5)*i)
-                .text(legendScale(30 + textHeight/2 + ((height - textHeight)/5)*i))
+                .attr("y", 30 + textHeight/2 + ((height-textHeight*6)/5)*i)
+                .text(legendScale(i))
                 .style("font-size", "14px")
                 .attr("alignment-baseline","middle");
             }
@@ -368,7 +368,7 @@ def scatter_plot(data,x_cat,y_cat,axes,features):
       </div>
       <div style="position: relative">
         <svg id=$figure_id class='chart'></svg>
-        <div class="legend"><svg id=$legend_id height=400 width=400></svg></div>
+        <div class="legend"><svg id=$legend_id height=500 width=400></svg></div>
       </div>
       <script>
       require([$chart_id], function(mychart) {
